@@ -77,3 +77,5 @@ docker run hello-world
 **5. docker stop {container_id}:**  Stop a running container (This can be done from the host terminal without entering the container).
 
 **6. docker start {container_id}:**  Restart a stopped container
+
+**7. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
