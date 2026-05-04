@@ -30,10 +30,9 @@
   5. A **Docker Image** is the blueprint used to create containers (not a runtime layer like an OS).
 
 
-**Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
-
 ---------------------------
 
+**Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
 ### Post-Installation Steps (Ubuntu)
 
 --------------------------
