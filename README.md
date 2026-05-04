@@ -50,10 +50,10 @@ sudo systemctl enable docker
 **4. Run Docker Without sudo (Optional but Recommended):**
 sudo usermod -aG docker $USER
 
-# Apply group changes (log out & log back in OR run):
+**5. Apply group changes:**
 newgrp docker
 
-**5. Test Docker Installation:**
+**6. Test Docker Installation:**
 docker run hello-world
 
 ---------------------------
