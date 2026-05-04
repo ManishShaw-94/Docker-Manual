@@ -6,6 +6,8 @@
 
 > A **Container** is a running instance of an image, packaged with its dependencies and isolated from the host system.
 
+> A **Dockerfile** is a file that contains instructions to build a Docker image.
+
 ## Docker vs Virtual Machines
 
 ### Virtual Machines (VMs)
@@ -79,3 +81,14 @@ docker run hello-world
 **6. docker start {container_id}:**  Restart a stopped container
 
 **7. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
+
+**8. docker build -t {tag_name} . :** Create a Docker image using the Dockerfile in the current directory and tag it with a name
+```bash
+docker build -t my-app .
+```
+
+**9. docker logs {container_id}:**  View the logs of a container
+
+**9. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+
+**10. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
