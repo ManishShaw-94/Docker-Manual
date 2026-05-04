@@ -67,8 +67,10 @@ docker run hello-world
 **2. docker iamages:**  List all locally available Docker images
    
 **3. docker run {image_name}:**  Start a new container using the specified image
+
   a. docker run -it {image_name} : To keep the container running (Start a container in interactive mode and connect it to your terminal)
 
 **4. docker ps:**  List all currently running containers
+
    a. docker ps -a : List all containers (including running, stopped, and exited ones)
 
