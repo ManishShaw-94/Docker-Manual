@@ -131,7 +131,7 @@ ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
 ```
 
-**11. docker compose :** Manage multi-container applications (build, run, and stop services) defined in a docker-compose.yml file
+**11. docker compose up:** Build (if needed) and start all services defined in a docker-compose.yml file. Docker compose manages multi-container applications (build, run, and stop services) defined in a docker-compose.yml file
 
 ```bash
 version: '3.6'
