@@ -9,6 +9,7 @@
 ## Docker vs Virtual Machines
 
 **Virtual Machines (VMs)**
+<img width="544" height="398" alt="image" src="https://github.com/user-attachments/assets/7e75f0ee-11c9-41a1-a676-78dd5e01c187" />
 
 ### Key Points: 
   1. Each VM includes a **full Guest OS**.
