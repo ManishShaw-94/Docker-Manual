@@ -63,5 +63,12 @@ docker run hello-world
 --------------------------
 
 **1. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
+
+**2. docker iamages:**  List all locally available Docker images
    
-**2. docker run {image_name}:**  Start a new container using the specified image
+**3. docker run {image_name}:**  Start a new container using the specified image
+  a. docker run -it {image_name} : To keep the container running (Start a container in interactive mode and connect it to your terminal)
+
+**4. docker ps:**  List all currently running containers
+   a. docker ps -a : List all containers (including running, stopped, and exited ones)
+
