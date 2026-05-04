@@ -86,7 +86,7 @@ docker run hello-world
 
 **8. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and assign it a tag
 
-  a. docker build -t {image_name}:{tag_name} -f {dockerfile_name} . : Build a Docker image using a specific Dockerfile instead of the default `Dockerfile`
+    a. docker build -t {image_name}:{tag_name} -f {dockerfile_name} . : Build a Docker image using a specific Dockerfile instead of the default `Dockerfile`
   
 ```bash
 #Step 1: Use a base image for your docker file
