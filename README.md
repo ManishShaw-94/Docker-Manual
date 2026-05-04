@@ -84,7 +84,10 @@ docker run hello-world
 
 **7. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
 
-**8. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and tag it with a name
+**8. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and assign it a tag
+
+  a. docker build -t {image_name}:{tag_name} -f {dockerfile_name} . : Build a Docker image using a specific Dockerfile instead of the default `Dockerfile`
+  
 ```bash
 #Step 1: Use a base image for your docker file
 #FROM python
