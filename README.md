@@ -9,6 +9,7 @@
 ## Docker vs Virtual Machines
 
 **Virtual Machines (VMs)**
+
 <img width="544" height="398" alt="image" src="https://github.com/user-attachments/assets/7e75f0ee-11c9-41a1-a676-78dd5e01c187" />
 
 ### Key Points: 
@@ -18,6 +19,8 @@
   4. Networking and storage are managed **per VM via the hypervisor**.
 
 **Docker (Containers)**
+
+<img width="408" height="299" alt="image" src="https://github.com/user-attachments/assets/f1c139e2-6d41-434c-b7d0-c121f4d8d6b0" />
 
 ### Key Points:
   1. Containers **share the host OS kernel** (no separate OS per container).
