@@ -131,8 +131,48 @@ ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
 ```
 
-**11. docker logs {container_id}:**  View the logs of a container
+**11. docker compose :** Manage multi-container applications (build, run, and stop services) defined in a docker-compose.yml file
 
-**12. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+```bash
+version: '3.6'
 
-**13. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-backend
+    hostname: backend-host
+    volumes: 
+      - ./backend:/app1
+    ports:
+      - "8000:8000"
+    networks:
+      - ares-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-frontend
+    hostname: frontend-host
+    volumes:
+      - ./frontend:/app2
+    environment:
+      - BACKEND_URL=http://backend-host:8000/api
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - ares-network
+
+networks:
+  ares-network: {}
+```
+**12. docker logs {container_id}:**  View the logs of a container
+
+**13. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+
+**14. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
