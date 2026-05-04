@@ -29,13 +29,38 @@
   4. Networking and storage are **handled by Docker**, but shared more efficiently.
   5. A **Docker Image** is the blueprint used to create containers (not a runtime layer like an OS).
 
+
+**Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
+
+---------------------------
+
+### Post-Installation Steps (Ubuntu)
+
+--------------------------
+
+**1. Verify Docker Installation:**
+sudo docker --version
+
+**2. Start Docker Service:**
+sudo systemctl start docker
+
+**3. Enable Docker to Start on Boot:**
+sudo systemctl enable docker
+
+**4. Run Docker Without sudo (Optional but Recommended):**
+sudo usermod -aG docker $USER
+
+# Apply group changes (log out & log back in OR run):
+newgrp docker
+
+**5. Test Docker Installation:**
+docker run hello-world
+
 ---------------------------
 
 ## Basic Docker Commands
 
 --------------------------
-
-**Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
 
 **1. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
    
