@@ -118,6 +118,6 @@ CMD [ "app.py" ]
 
 **9. docker logs {container_id}:**  View the logs of a container
 
-**9. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+**10. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
 
-**10. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
+**11. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
