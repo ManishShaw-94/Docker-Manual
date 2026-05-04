@@ -82,9 +82,38 @@ docker run hello-world
 
 **7. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
 
-**8. docker build -t {tag_name} . :** Create a Docker image using the Dockerfile in the current directory and tag it with a name
+**8. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and tag it with a name
 ```bash
-docker build -t my-app .
+#Step 1: Use a base image for your docker file
+#FROM python
+FROM python:3.8-alpine
+
+# Option 1: Simple execution
+#Step 2: Add/Copy file into container which you want to execute followed by destination
+#ADD app.py .
+#COPY app.py .
+#ADD app.py /tree/app1.py
+COPY app.py /tree/app1.py
+
+#Step 3: Run the application
+#CMD ["python", "app.py"]
+CMD ["python", "/tree/app1.py"]
+
+# Option 2: Using WORKDIR + ENTRYPOINT
+FROM python:3.8-alpine
+
+#Set working directory
+WORKDIR /tree
+
+# IF you need to add multiple file in the directory
+#ADD app.py .
+#ADD names.txt .
+#ADD . .
+COPY . .
+
+#CMD ["python", "app.py"]
+ENTRYPOINT [ "python" ]
+CMD [ "app.py" ]
 ```
 
 **9. docker logs {container_id}:**  View the logs of a container
