@@ -9,20 +9,6 @@
 ## Docker vs Virtual Machines
 
 **Virtual Machines (VMs)**
-+--------------------------------------------------+
-|   VM1   |   VM2   |        VM3                   |
-|         |         |  +------------------------+  |
-|         |         |  |     Application        |  |
-|         |         |  +------------------------+  |
-|         |         |  |        Guest OS        |  |
-|         |         |  +------------------------+  |
-+--------------------------------------------------+
-|                 Hypervisor                       |
-+--------------------------------------------------+
-|               Host OS & Kernel                   |
-+--------------------------------------------------+
-|                   Hardware                      |
-+--------------------------------------------------+
 
 ### Key Points: 
   1. Each VM includes a **full Guest OS**.
@@ -32,29 +18,12 @@
 
 **Docker (Containers)**
 
-+--------------------------------------------------+
-|   D1    |   D2    |        D3                    |
-|         |         |  +------------------------+  |
-|         |         |  |     Application        |  |
-|         |         |  +------------------------+  |
-|         |         |  |   Container Runtime    |  |
-|         |         |  | (from Docker Image)    |  |
-|         |         |  +------------------------+  |
-+--------------------------------------------------+
-|               Docker Engine                      |
-+--------------------------------------------------+
-|               Host OS & Kernel                   |
-+--------------------------------------------------+
-|                   Hardware                      |
-+--------------------------------------------------+
-
 ### Key Points:
-
-Containers share the host OS kernel (no separate OS per container).
-Docker Engine manages containers.
-Much lighter and faster than VMs.
-Networking and storage are handled by Docker, but shared more efficiently.
-A Docker Image is the blueprint used to create containers (not a runtime layer like an OS).
+  1. Containers **share the host OS kernel** (no separate OS per container).
+  2. **Docker Engine** manages containers.
+  3. Much **lighter and faster** than VMs.
+  4. Networking and storage are **handled by Docker**, but shared more efficiently.
+  5. A **Docker Image** is the blueprint used to create containers (not a runtime layer like an OS).
 
 ---------------------------
 
