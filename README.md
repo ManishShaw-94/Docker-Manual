@@ -74,3 +74,6 @@ docker run hello-world
 
     a. docker ps -a : List all containers (including running, stopped, and exited ones)
 
+**5. docker stop {container_id}:**  Stop a running container (This can be done from the host terminal without entering the container).
+
+**6. docker start {container_id}:**  Restart a stopped container
