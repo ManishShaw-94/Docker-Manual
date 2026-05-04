@@ -92,6 +92,8 @@ docker run hello-world
 
     b. docker image prune: Remove all dangling images
 
+    c. docker rmi $(docker images -q) -f : This command removes ALL images, including those used by containers. Containers depending on these images may break.
+
 **9. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
 
 **10. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and assign it a tag
@@ -171,8 +173,15 @@ services:
 networks:
   ares-network: {}
 ```
-**12. docker logs {container_id}:**  View the logs of a container
 
-**13. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+**12. docker tag {source_image} {target_image} :**  Assign a new name and tag to an existing image (useful before pushing to a registry)
 
-**14. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
+**13. docker psuh {image_name}:{tagname} :**  Push a Docker image to a container registry (e.g., Docker Hub)
+
+**14. docker login :**  Log in to a Docker registry using your credentials
+
+**15. docker logs {container_id}:**  View the logs of a container
+
+**16. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+
+**17. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
