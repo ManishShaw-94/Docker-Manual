@@ -76,6 +76,8 @@ docker run hello-world
 
     a. docker ps -a : List all containers (including running, stopped, and exited ones)
 
+    b. docker ps -aq : List all containers id only
+
 **5. docker stop {container_id}:**  Stop a running container (This can be done from the host terminal without entering the container).
 
 **6. docker start {container_id}:**  Restart a stopped container
@@ -116,8 +118,18 @@ ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
 ```
 
-**9. docker logs {container_id}:**  View the logs of a container
+**9. docker rm {container_id} :** Remove a stopped container
 
-**10. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+    a. docker rm $(docker ps -aq) : Remove all containers (running + stopped)
 
-**11. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
+**10. docker rmi {image_id} :** Remove a Docker image
+
+    a. docker image ls dangling=true : List all dangling images (unused images with no tag)
+
+    b. docker image prune: Remove all dangling images
+    
+**11. docker logs {container_id}:**  View the logs of a container
+
+**12. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
+
+**13. docker inspect {container_id}:** Display detailed information about a container. Note: This shows container-level details (configuration, state, networking, etc.), not full application-level logs or internal behavior
