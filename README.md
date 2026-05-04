@@ -82,9 +82,19 @@ docker run hello-world
 
 **6. docker start {container_id}:**  Restart a stopped container
 
-**7. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
+**7. docker rm {container_id} :** Remove a stopped container
 
-**8. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and assign it a tag
+    a. docker rm $(docker ps -aq) : Remove all containers (running + stopped)
+
+**8. docker rmi {image_id} :** Remove a Docker image
+
+    a. docker image ls dangling=true : List all dangling images (unused images with no tag)
+
+    b. docker image prune: Remove all dangling images
+
+**9. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
+
+**10. docker build -t {image_name}:{tag_name} . :** Create a Docker image using the Dockerfile in the current directory and assign it a tag
 
     a. docker build -t {image_name}:{tag_name} -f {dockerfile_name} . : Build a Docker image using a specific Dockerfile instead of the default `Dockerfile`
   
@@ -121,16 +131,6 @@ ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
 ```
 
-**9. docker rm {container_id} :** Remove a stopped container
-
-    a. docker rm $(docker ps -aq) : Remove all containers (running + stopped)
-
-**10. docker rmi {image_id} :** Remove a Docker image
-
-    a. docker image ls dangling=true : List all dangling images (unused images with no tag)
-
-    b. docker image prune: Remove all dangling images
-    
 **11. docker logs {container_id}:**  View the logs of a container
 
 **12. docker exec -it {container_id} {command_name}:**  Run a command inside an already running container from the host system (local terminal)
