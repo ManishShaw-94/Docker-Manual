@@ -35,6 +35,8 @@
 
 --------------------------
 
+**Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
+
 **1. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
    
 **2. docker run {image_name}:**  Start a new container using the specified image
