@@ -58,7 +58,7 @@ docker run hello-world
 
 ---------------------------
 
-## Basic Docker Commands
+### Basic Docker Commands
 
 --------------------------
 
