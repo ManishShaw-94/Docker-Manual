@@ -33,7 +33,7 @@
 ---------------------------
 
 **Pre-requisite (Ubuntu): Install Docker:** sudo apt install docker.io
-### Post-Installation Steps (Ubuntu)
+**Post-Installation Steps (Ubuntu)**
 
 --------------------------
 
