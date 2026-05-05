@@ -67,35 +67,35 @@ docker run hello-world
 
 --------------------------
 
-**1. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
+**1. docker images:**  List all locally available Docker images
 
-**2. docker images:**  List all locally available Docker images
+**2. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
    
 **3. docker run {image_name}:**  Start a new container using the specified image
 
     a. docker run -it {image_name} : To keep the container running (Start a container in interactive mode and connect it to your terminal)
 
-**4. docker ps:**  List all currently running containers
-
-    a. docker ps -a : List all containers (including running, stopped, and exited ones)
-
-    b. docker ps -aq : List all containers id only
-
-**5. docker stop {container_id}:**  Stop a running container (This can be done from the host terminal without entering the container).
-
-**6. docker start {container_id}:**  Restart a stopped container
-
-**7. docker rm {container_id} :** Remove a stopped container
-
-    a. docker rm $(docker ps -aq) : Remove all containers (running + stopped)
-
-**8. docker rmi {image_id} :** Remove a Docker image
+**4. docker rmi {image_id} :** Remove a Docker image
 
     a. docker image ls dangling=true : List all dangling images (unused images with no tag)
 
     b. docker image prune: Remove all dangling images
 
     c. docker rmi $(docker images -q) -f : This command removes ALL images, including those used by containers. Warning! - Containers depending on these images may break.
+
+**5. docker ps:**  List all currently running containers
+
+    a. docker ps -a : List all containers (including running, stopped, and exited ones)
+
+    b. docker ps -aq : List all containers id only
+
+**6. docker start {container_id}:**  Restart a stopped container
+
+**7. docker stop {container_id}:**  Stop a running container (This can be done from the host terminal without entering the container).
+
+**8. docker rm {container_id} :** Remove a stopped container
+
+    a. docker rm $(docker ps -aq) : Remove all containers (running + stopped)
 
 **9. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
 
