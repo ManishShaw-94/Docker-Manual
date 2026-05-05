@@ -49,13 +49,16 @@ sudo systemctl start docker
 **3. Enable Docker to Start on Boot:**
 sudo systemctl enable docker
 
-**4. Run Docker Without sudo (Optional but Recommended):**
+**4. Create the docker group:**
+sudo groupadd docker
+
+**5. Run Docker Without sudo (Optional but Recommended):**
 sudo usermod -aG docker $USER
 
-**5. Apply group changes:**
+**6. Apply group changes:**
 newgrp docker
 
-**6. Test Docker Installation:**
+**7. Test Docker Installation:**
 docker run hello-world
 
 ---------------------------
