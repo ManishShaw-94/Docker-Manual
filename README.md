@@ -176,7 +176,7 @@ networks:
 
 **12. docker tag {source_image} {target_image} :**  Assign a new name and tag to an existing image (useful before pushing to a registry)
 
-**13. docker psuh {image_name}:{tagname} :**  Push a Docker image to a container registry (e.g., Docker Hub)
+**13. docker push {image_name}:{tagname} :**  Push a Docker image to a container registry (e.g., Docker Hub)
 
 **14. docker login :**  Log in to a Docker registry using your credentials
 
