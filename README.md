@@ -66,7 +66,7 @@ docker run hello-world
 
 **1. docker pull {image_name}:**  Fetch an image from a registry (e.g., Docker Hub)
 
-**2. docker iamages:**  List all locally available Docker images
+**2. docker images:**  List all locally available Docker images
    
 **3. docker run {image_name}:**  Start a new container using the specified image
 
@@ -92,7 +92,7 @@ docker run hello-world
 
     b. docker image prune: Remove all dangling images
 
-    c. docker rmi $(docker images -q) -f : This command removes ALL images, including those used by containers. Containers depending on these images may break.
+    c. docker rmi $(docker images -q) -f : This command removes ALL images, including those used by containers. Warning! - Containers depending on these images may break.
 
 **9. docker run -it -p {external_port}:{internal_port} {image_name} :**  Port mapping (maps a port from the local machine to a port inside the Docker container)
 
@@ -150,7 +150,7 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - ares-network
+      - ms-network
 
   frontend:
     build:
@@ -168,10 +168,10 @@ services:
     depends_on:
       - backend
     networks:
-      - ares-network
+      - ms-network
 
 networks:
-  ares-network: {}
+  ms-network: {}
 ```
 
 **12. docker tag {source_image} {target_image} :**  Assign a new name and tag to an existing image (useful before pushing to a registry)
